@@ -7,20 +7,29 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body ng-app='myApp'>
-  <div class="container" ng-controller="foodsController as g">
+  <div class="container" ng-controller="foodsController as c">
     <h1>Controller and Directions</h1>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div>
-          Favorite Food: <input type="text" ng-model="favoriteFood">
-          <button>Add Food</button>
+          Favorite Food: <input type="text" ng-model="c.favoriteFood">
+          <button ng-click="c.addFood()">Add Food</button>
         </div>
         <div>
-          Currently typing: <strong ng-bind="favoriteFood"></strong>
+          Currently typing: <strong ng-bind="c.favoriteFood"></strong>
         </div>
       </div>
-      <div class="col-md-4">test</div>
-      <div class="col-md-4">test</div>
+      <div class="col-md-6">
+        <div>
+          <input type="text" placeholder="filter...">
+        </div>
+        <strong>{{ c.favoriteFoods }}</strong>
+        <div class="alert alert-success" >
+          <ul>
+            <li ng-repeat="f in c.favoriteFoods">{{ f }}</li>
+          </ul>
+        </div>
+      </div>
 
     </div>
   </div>
