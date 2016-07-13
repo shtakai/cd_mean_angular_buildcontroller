@@ -3,11 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body ng-app='myApp'>
   <div class="container" ng-controller="foodsController as g">
     <h1>Controller and Directions</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div>
+          Favorite Food: <input type="text" ng-model="favoriteFood">
+          <button>Add Food</button>
+        </div>
+        <div>
+          Currently typing: <strong ng-bind="favoriteFood"></strong>
+        </div>
+      </div>
+      <div class="col-md-4">test</div>
+      <div class="col-md-4">test</div>
 
+    </div>
   </div>
 </body>
 <script src="./bower_components/angular/angular.js"></script>
