@@ -23,9 +23,8 @@
         <div>
           <input type="text" placeholder="filter...">
         </div>
-        <strong>{{ c.favoriteFoods }}</strong>
-        <div class="alert alert-success" >
-          <ul>
+        <div class="alert alert-success" ng-hide="c.favoriteFoods.length <= 0" >
+          <ul >
             <li ng-repeat="f in c.favoriteFoods">{{ f }}</li>
           </ul>
         </div>
