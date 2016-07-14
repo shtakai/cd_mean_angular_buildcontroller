@@ -14,12 +14,19 @@ myApp.controller('foodsController', function(){
     if(_food.trim() === ''){
       return;
     }
-    this.favoriteFoods.unshift(_food);
+    _favoriteFoods.unshift(_food);
     this.favoriteFood = '';
   }
   this.find = function(){
+   //if(typeof(this.findText)==='undefined'){
+     //this.findText = '';
+   //}
     this.findText = this.findText || '';
      console.log(`find clicked: ${this.findText}`);
+     let _text = this.findText;
+     this.favoriteFoods = _.filter(_favoriteFoods,function(food){
+       return food.indexOf(_text) != -1
+     })
 
   }
 
