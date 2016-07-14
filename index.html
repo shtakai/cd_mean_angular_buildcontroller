@@ -21,7 +21,7 @@
       </div>
       <div class="col-md-6">
         <div>
-          <input type="text" placeholder="filter...">
+            <input type="text" placeholder="filter..." ng-model="c.findText" ng-change="c.find()">
         </div>
         <div class="alert alert-success" ng-hide="c.favoriteFoods.length <= 0" >
           <ul >
